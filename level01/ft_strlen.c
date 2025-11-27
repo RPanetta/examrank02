@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 14:10:57 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/11/27 15:05:00 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/11/27 14:58:00 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/11/27 15:01:59 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-void	first_word(int argc, char **argv)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (argc != 2)
+	while (str[i] != '\0')
 	{
-		write(1, "\n", 1);
-		return ;
-	}
-	while (argv[1][i] == ' ' || argv[1][i] == '\t')
-		i++;
-	while (argv[1][i] != '\0' && argv[1][i] != ' ' && argv[1][i] != '\t')
-	{
-		write(1, &argv[1][i], 1);
 		i++;
 	}
-	write (1, "\n", 1);
+	return (i);
 }
 
-int	main(int argc, char **argv)
-{
-	first_word(argc, argv);
-	return (0);
-}
+// int main(void)
+// {
+// 	char	str[] = "my name is Rocio";
+// 	printf("%d", ft_strlen(str));
+// 	return (0);
+// }

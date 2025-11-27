@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   repeat_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 14:10:57 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/11/27 15:05:00 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/11/27 15:50:22 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/11/27 17:59:16 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-void	first_word(int argc, char **argv)
+char	repeat_alpha(int argc, char **argv)
 {
 	int	i;
+	char c;
 
 	i = 0;
-	if (argc != 2)
+	if (argc == 2)
 	{
-		write(1, "\n", 1);
-		return ;
+		while (argv[1][i])
+		{
+			c = argv[1][i];
+		}
+	
 	}
-	while (argv[1][i] == ' ' || argv[1][i] == '\t')
-		i++;
-	while (argv[1][i] != '\0' && argv[1][i] != ' ' && argv[1][i] != '\t')
+	else
 	{
-		write(1, &argv[1][i], 1);
-		i++;
+		write (1, "\n", 1);
 	}
 	write (1, "\n", 1);
+	return
 }
 
-int	main(int argc, char **argv)
+int main(void)
 {
-	first_word(argc, argv);
 	return (0);
 }

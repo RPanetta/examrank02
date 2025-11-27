@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 14:10:57 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/11/27 15:05:00 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/11/27 12:57:24 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/11/27 13:11:04 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-void	first_word(int argc, char **argv)
+char	*ft_strcpy(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	if (argc != 2)
+	while (s2[i] != '\0')
 	{
-		write(1, "\n", 1);
-		return ;
-	}
-	while (argv[1][i] == ' ' || argv[1][i] == '\t')
-		i++;
-	while (argv[1][i] != '\0' && argv[1][i] != ' ' && argv[1][i] != '\t')
-	{
-		write(1, &argv[1][i], 1);
+		s1[i] = s2[i];
 		i++;
 	}
-	write (1, "\n", 1);
+	s1[i] = '\0';
+	return (s1);
 }
-
-int	main(int argc, char **argv)
-{
-	first_word(argc, argv);
-	return (0);
-}
+// int main(void)
+// {
+// 	char dest[7];
+// 	char src[] = "banana";
+// 	char *result;
+// 	result = ft_strcpy(dest, src);
+// 	printf("%s", result);
+// 	return(0);
+// }
