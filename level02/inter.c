@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:56:54 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/09 15:47:51 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/10 15:39:30 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_inter(int argc, char **argv)
 	i = 0;
 	if (argc == 3)
 	{
-		while(argv[1][i] != '\0')
+		while (argv[1][i] != '\0')
 		{
 			if (ft_char_in_str(argv[1][i], argv[2]) &&
 			!ft_already_printed(argv[1][i], argv[1], i))
