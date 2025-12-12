@@ -6,21 +6,30 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 19:48:34 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/10 19:59:10 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/12 15:50:13 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	print_bits(unsigned char octet)
 {
 	int	i;
-	unsigned char bit;
 
-	i = 8;
-	bit = 0;
-	
+	i = 7;
+	while (i >= 0)
+	{
+		if ((octet >> i) & 1)
+			write(1, "1", 1);
+		else
+			write(1, "0", 1);
+		i--;
+	}
 }
 
-int	main(void)
-{
-	return (0);
-}
+// int	main(void)
+// {
+// 	int	nbr = 16;
+// 	print_bits(nbr);
+// 	return (0);
+// }

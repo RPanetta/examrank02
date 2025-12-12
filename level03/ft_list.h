@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 12:55:24 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/12 13:18:05 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/11 11:59:50 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/11 12:12:03 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#ifndef FT_LIST_H
+#define FT_LIST_H
 
-int	ft_strcmp(char *s1, char *s2)
+typedef struct    s_list
 {
-	int	i;
+    struct s_list *next;
+    void          *data;
+}                 t_list;
 
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
-	{
-		i++;
-	}
-	return (s1[i] - s2[i]);
-}
-
-// int	main(void)
-// {
-// 	char	a[] = "hello";
-// 	char	b[] = "hell";
-// 	printf("%d\n",ft_strcmp(a, b));
-// 	printf("%d\n", strcmp(a, b));
-// 	return (0);
-// }
+#endif

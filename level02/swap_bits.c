@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   swap_bits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 12:55:24 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/12 13:18:05 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/12 13:21:02 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/12 14:14:54 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-int	ft_strcmp(char *s1, char *s2)
+unsigned char	swap_bits(unsigned char octet)
 {
-	int	i;
-
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
-	{
-		i++;
-	}
-	return (s1[i] - s2[i]);
+	return ((octet >> 4 | octet << 4));
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
-// 	char	a[] = "hello";
-// 	char	b[] = "hell";
-// 	printf("%d\n",ft_strcmp(a, b));
-// 	printf("%d\n", strcmp(a, b));
+// 	unsigned char	bit = 0;
+// 	unsigned char	result = swap_bits((unsigned char)65);
+// 	int i = 8;
+	
+// 	while (i--)
+// 	{
+// 		bit = (result >> i & 1) + 48;
+// 		printf("%c", bit);
+// 	}
+// 	printf("%c", result);
+// 	printf("\n");
 // 	return (0);
 // }

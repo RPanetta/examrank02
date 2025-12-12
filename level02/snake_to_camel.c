@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   snake_to_camel.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 12:55:24 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/12 13:18:05 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/12 15:07:02 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/12 15:22:33 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
+void	snake_to_camel(int argc, char **argv)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+	if (argc == 2)
 	{
-		i++;
+		while(argv[1][i] != '\0')
+		{
+			if (argv[1][i] == '_')
+			{
+				i++;
+				argv[1][i] = argv[1][i] - 32;
+			}
+			write(1, &argv[1][i], 1);
+			i++;
+		}
 	}
-	return (s1[i] - s2[i]);
+	write(1, "\n", 1);
 }
 
-// int	main(void)
-// {
-// 	char	a[] = "hello";
-// 	char	b[] = "hell";
-// 	printf("%d\n",ft_strcmp(a, b));
-// 	printf("%d\n", strcmp(a, b));
-// 	return (0);
-// }
+int	main(int argc, char **argv)
+{
+	snake_to_camel(argc, argv);
+	return (0);
+}

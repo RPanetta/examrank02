@@ -1,35 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   wdmatch.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 12:55:24 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/12 13:18:05 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/12 11:47:07 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/12 13:20:16 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
+void	wdmatch(int argc, char **argv)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+	j = 0;
+	if (argc == 3)
 	{
-		i++;
+		while (argv[1][i] && argv[2][j])
+		{
+			if (argv[1][i] == argv[2][j])
+			{
+				i++;
+			}
+			j++;
+		}
+		if (argv[1][i] == '\0')
+		{
+			i = 0;
+			while (argv[1][i])
+			{
+				write(1, &argv[1][i], 1);
+				i++;
+			}
+		}
 	}
-	return (s1[i] - s2[i]);
+	write(1, "\n", 1);
 }
 
-// int	main(void)
+// int	main(int argc, char **argv)
 // {
-// 	char	a[] = "hello";
-// 	char	b[] = "hell";
-// 	printf("%d\n",ft_strcmp(a, b));
-// 	printf("%d\n", strcmp(a, b));
+// 	wdmatch(argc, argv);
 // 	return (0);
 // }
