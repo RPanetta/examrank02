@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:55:22 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/08 14:03:12 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/15 14:56:27 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,24 @@ int	ft_atoi(const char *str)
 	{
 		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
 			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-			str++;
-		if (*str == '-' || *str == '+')
+			i++;
+		if (str[i] == '-' || str[i] == '+')
 		{
-			if (*str == '-')
+			if (str[i] == '-')
 				sign = -1;
-			str++;
+			i++;
 		}
-		while (*str >= '0' && *str <= '9')
+		while (str[i] >= '0' && str[i] <= '9')
 		{
-			result = result * 10 + (*str - '0');
-			str++;
+			result = result * 10 + (str[i] - '0');
+			i++;
 		}
 	}
 	return (result * sign);
 }
-// int main(void)
-// {
-// 	char	a[] = " -123abc";
-// 	printf("%d\n", ft_atoi(a));
-// 	return (0);
-// }
+int main(void)
+{
+	char	a[] = " -123abc";
+	printf("%d\n", ft_atoi(a));
+	return (0);
+}
