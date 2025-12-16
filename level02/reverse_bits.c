@@ -6,9 +6,11 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 10:34:50 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/14 19:20:01 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:46:06 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 unsigned char	reverse_bits(unsigned char octet)
 {
@@ -25,8 +27,6 @@ unsigned char	reverse_bits(unsigned char octet)
 	return (result);
 }
 
-#include <stdio.h>
-
 int	main(void)
 {
 	// unsigned char bit = 0;
@@ -41,7 +41,7 @@ int	main(void)
 	// 	bit = (res >> i & 1) + 48;
 	// 	printf("%c", bit);
 	// }
-	
+
 	int	nbr = 2;
 	printf("%d", reverse_bits(nbr));
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:15:21 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/12 14:50:55 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:43:56 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	char_seen(char c, char *str, int position)
 
 int	char_in_str(char c, char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -45,7 +45,7 @@ int	char_in_str(char c, char *str)
 void	ft_union(int argc, char **argv)
 {
 	int	i;
-	
+
 	i = 0;
 	if (argc == 3)
 	{
@@ -62,9 +62,9 @@ void	ft_union(int argc, char **argv)
 		{
 			if (!char_seen(argv[2][i], argv[2], i) &&
 				!char_in_str(argv[2][i], argv[1]))
-				{
-					write(1, &argv[2][i], 1);
-				}
+			{
+				write(1, &argv[2][i], 1);
+			}
 			i++;
 		}
 	}

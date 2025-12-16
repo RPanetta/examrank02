@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 15:07:02 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/12 15:22:33 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:39:47 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	snake_to_camel(int argc, char **argv)
 	i = 0;
 	if (argc == 2)
 	{
-		while(argv[1][i] != '\0')
+		while (argv[1][i] != '\0')
 		{
 			if (argv[1][i] == '_')
 			{

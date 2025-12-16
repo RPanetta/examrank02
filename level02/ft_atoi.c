@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:55:22 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/15 14:56:27 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:44:06 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-int main(void)
+
+int	main(void)
 {
 	char	a[] = " -123abc";
 	printf("%d\n", ft_atoi(a));

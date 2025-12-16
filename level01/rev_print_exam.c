@@ -1,45 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ulstr.c                                            :+:      :+:    :+:   */
+/*   rev_print_exam.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 17:42:34 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/16 11:39:14 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/16 15:33:22 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/16 15:40:28 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ulstr(int argc, char **argv)
+char	*rev_print(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (argc == 2)
+	while (str[i] != '\0')
 	{
-		while (argv[1][i])
-		{
-			if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-			{
-				argv[1][i] = argv[1][i] - 32;
-			}
-			else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-			{
-				argv[1][i] = argv[1][i] + 32;
-			}
-			write(1, &argv[1][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
+		i++;
 	}
-	else
-		write(1, "\n", 1);
+	i = i - 1; //to not count NULL
+	while (i >= 0)
+	{
+		write(1, &str[i], 1);
+		i--;
+	}
+	return (str);
 }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	ulstr(argc, argv);
+	char	*s = "how are you";
+	char	*s2 = "dub0 a POIL";
+	rev_print(s2);
 	return (0);
 }

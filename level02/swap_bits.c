@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 13:21:02 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/12 14:14:54 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:42:43 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ unsigned char	swap_bits(unsigned char octet)
 // 	unsigned char	bit = 0;
 // 	unsigned char	result = swap_bits((unsigned char)65);
 // 	int i = 8;
-	
+
 // 	while (i--)
 // 	{
 // 		bit = (result >> i & 1) + 48;

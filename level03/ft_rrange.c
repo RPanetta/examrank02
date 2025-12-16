@@ -1,45 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ulstr.c                                            :+:      :+:    :+:   */
+/*   ft_rrange.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 17:42:34 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/16 11:39:14 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/16 15:51:28 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/16 15:58:20 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ulstr(int argc, char **argv)
+int	*ft_rrange(int start, int end)
 {
+	int	*array;
+	int	size;
 	int	i;
-
-	i = 0;
-	if (argc == 2)
+	
+	if (start <= end)
 	{
-		while (argv[1][i])
+		size = end - start + 1;
+	}
+	else if (start >= end)
+	{
+		size = start - end + 1;
+	}
+	array = malloc(sizeof(int) * size);
+	if (size == NULL)
+		return (NULL);
+	i  = 0;
+	if (start <= end)
+	{
+		while (start <= end)
 		{
-			if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-			{
-				argv[1][i] = argv[1][i] - 32;
-			}
-			else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-			{
-				argv[1][i] = argv[1][i] + 32;
-			}
-			write(1, &argv[1][i], 1);
+			
 			i++;
 		}
-		write(1, "\n", 1);
 	}
 	else
-		write(1, "\n", 1);
+	{
+		while (start >= end)
+		{
+			i++;
+		}
+	}
+	return (array);
 }
-
-int	main(int argc, char **argv)
+int	main(void)
 {
-	ulstr(argc, argv);
+	ft_rrange(9, 12);
 	return (0);
 }
