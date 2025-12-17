@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:39:40 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/16 15:50:31 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/17 13:55:24 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	*ft_range(int start, int end)
 {
 	int	i;
-	int size;
+	int	size;
 	int	*array;
 
 	if (start <= end)
@@ -25,7 +25,6 @@ int	*ft_range(int start, int end)
 	}
 	else
 		size = start - end + 1;
-
 	array = malloc(sizeof(int) * size);
 	if (array == NULL)
 		return (NULL);
@@ -44,7 +43,7 @@ int	*ft_range(int start, int end)
 		while (start >= end)
 		{
 			array[i] = start;
-			start--;;
+			start--;
 			i++;
 		}
 	}
@@ -56,11 +55,11 @@ int	main(void)
 	int	*result;
 	int	i;
 	int	size;
-	
+
 	result = ft_range(3, 6);
 	size = 6 - 3 + 1;
 	i = 0;
-	while(result[i] != '\0')
+	while (i < size)
 	{
 		printf("%d ", result[i]);
 		i++;

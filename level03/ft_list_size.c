@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:28:56 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/16 14:33:30 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/17 13:57:22 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	ft_list_size(t_list *begin_list)
 // 	new_node2->data = 22;
 // 	new_node2->next = NULL;
 // 	head->next = new_node2;
-	
+
 // 	t_list *new_node3 = malloc(sizeof(t_list));
 // 	if (new_node3 == NULL)
 // 		return (0);
@@ -73,14 +73,14 @@ int	ft_list_size(t_list *begin_list)
 // 	return (0);
 // }
 
-
 int	main(void)
 {
-	int result;
-	t_list list;
+	int		result;
+	t_list	list;
 	t_list	node2;
 	t_list	node3;
 	t_list	node4;
+
 	list.data = ("A");
 	list.next = &node2;
 	node2.data = ("B");
