@@ -42,14 +42,14 @@ int	ft_number(int nbr1, int nbr2)
 
 void	pgcd(int argc, char **argv)
 {
+	char	*a;
+	char	*b;
+	int		nbr1;
+	int		nbr2;
+	int		g;
+
 	if (argc == 3)
 	{
-		char	*a;
-		char	*b;
-		int		nbr1;
-		int		nbr2;
-		int		g;
-
 		a = argv[1];
 		b = argv[2];
 		nbr1 = atoi(a);

@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print_exam.c                                   :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 15:33:22 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/22 14:09:15 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/19 16:10:22 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/22 14:12:49 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_LIST_H
+#define FT_LIST_H
 
-char	*rev_print(char *str)
+typedef struct	s_list
 {
-	int	i;
+	struct s_list	*next;
+	void			*data;
+}				t_list;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	i = i - 1; //to not count NULL
-	while (i >= 0)
-	{
-		write(1, &str[i], 1);
-		i--;
-	}
-	return (str);
-}
-
-// int	main(void)
-// {
-// 	char	*s = "how are you";
-// 	char	*s2 = "dub0 a POIL";
-// 	rev_print(s2);
-// 	return (0);
-// }
+#endif

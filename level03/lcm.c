@@ -6,14 +6,14 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:40:41 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/17 20:58:48 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/22 14:13:32 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	lcm(unsigned int a, unsigned int b)
 {
 	unsigned int	nbr;
-	
+
 	if (a == 0 || b == 0)
 	{
 		return (0);

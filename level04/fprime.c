@@ -1,39 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print_exam.c                                   :+:      :+:    :+:   */
+/*   fprime.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 15:33:22 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/22 14:09:15 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/22 14:16:41 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/22 14:53:47 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-char	*rev_print(char *str)
+void	fprime(int argc, char **argv)
 {
+	int	n;
 	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	
+	i = 2;
+	if (argc == 2)
 	{
-		i++;
+		n = atoi(argv[1]);
+		if (n == 1)
+			printf("1");
+		while (i <= n)
+		{
+			if (n % i == 0)
+			{
+				printf("%d", i);
+				if (n != i)
+					printf("*");
+				n = n / i;
+			}
+			else
+			{
+				i++;
+			}
+		}
 	}
-	i = i - 1; //to not count NULL
-	while (i >= 0)
-	{
-		write(1, &str[i], 1);
-		i--;
-	}
-	return (str);
+	printf("\n");
 }
 
-// int	main(void)
-// {
-// 	char	*s = "how are you";
-// 	char	*s2 = "dub0 a POIL";
-// 	rev_print(s2);
-// 	return (0);
-// }
+int	main(int argc, char **argv)
+{
+	fprime(argc, argv);
+	return (0);
+}
