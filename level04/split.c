@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:42:33 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/29 22:15:11 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/30 13:38:41 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	ft_num_words(char *s)
 	}
 	return (count);
 }
+
 char	*ft_word_dup(char *s, size_t len)
 {
 	size_t	i = 0;
@@ -48,14 +49,15 @@ char	*ft_word_dup(char *s, size_t len)
 	word[i] = '\0';
 	return (word);
 }
+
 char	**ft_split(char *str)
 {
 	char	**result;
 	size_t	i = 0;
 	size_t	j = 0;
 	size_t	start;
-	
-	result = (char **)malloc(sizeof(char*)* (ft_num_words(str) + 1));
+
+	result = (char **)malloc(sizeof(char *) * (ft_num_words(str) + 1));
 	if (!result)
 		return (NULL);
 	while (str[i])

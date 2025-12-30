@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/19 16:10:22 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/30 13:40:53 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/30 15:56:13 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/30 16:13:48 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ typedef struct s_list
 {
 	struct s_list	*next;
 	void			*data;
-}				t_list;
+}					t_list;
 
 #endif

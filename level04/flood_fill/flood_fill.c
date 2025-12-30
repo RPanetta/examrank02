@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:42:21 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/29 17:37:45 by rpanetta         ###   ########.fr       */
+/*   Updated: 2025/12/30 13:37:13 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	flood_fill(char **tab, t_point size, t_point begin)
 // int	main(void)
 // {
 // 	char	**area;
-	
+
 // 	t_point	size = {8, 5};
 // 	t_point	begin = {1, 1};
-	
+
 // 	char	*zone[] =
 // 	{
 // 		"1 1 1 1 1 1 1 1",
@@ -56,12 +56,12 @@ void	flood_fill(char **tab, t_point size, t_point begin)
 // 		"1 1 1 0 0 0 0 1",
 // 		NULL	
 // 	};
-	
+
 // 	//area = make_area(zone);
 // 	// print_tab(area);
 // 	flood_fill(area, size, begin);
 // 	printf("\n");
 // 	// print_tab(area);
-	
+
 // 	return (0);
 // }
