@@ -107,7 +107,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	}
 	while (str[i])
 	{
-		if (convert(str[i]) == -1)
+		if (convert(str[i]) == -1 || convert(str[i]) >= str_base)
 		{
 			break ;
 		}
