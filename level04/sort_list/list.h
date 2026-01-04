@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/19 16:10:22 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/30 13:40:53 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/31 12:16:25 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/31 12:41:49 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#ifndef LIST_H
+# define LIST_H
 
 typedef struct s_list
 {
 	struct s_list	*next;
-	void			*data;
+	int				*data;
 }				t_list;
 
 #endif

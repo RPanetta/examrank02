@@ -1,49 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fprime.c                                           :+:      :+:    :+:   */
+/*   rev_wstr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 14:16:41 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/30 13:35:08 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/30 16:44:26 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/30 17:35:53 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
 
-void	fprime(int argc, char **argv)
+void	rev_wstr(char *str)
 {
-	int	n;
 	int	i;
+	int	start;
+	int	end;
 
-	i = 2;
-	if (argc == 2)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		n = atoi(argv[1]);
-		if (n == 1)
-			printf("1");
-		while (i <= n)
-		{
-			if (n % i == 0)
-			{
-				printf("%d", i);
-				if (n != i)
-					printf("*");
-				n = n / i;
-			}
-			else
-			{
-				i++;
-			}
-		}
+		i++;
 	}
-	printf("\n");
+	while (i > 0)
+	{
+		while (i > 0 && (str[i - 1] == ' ' || str [i - 1] == '\t'))
+			i--;
+		end = i;
+		while (i > 0 && str[i - 1] != ' ' && str[i - 1] != '\t')
+			i--;
+		start = i;
+		while (start < end)
+		{
+			write(1, &str[start], 1);
+			start++;
+		}
+		if (i > 0)
+			write(1, " ", 1);
+	}
 }
 
 int	main(int argc, char **argv)
 {
-	fprime(argc, argv);
+	if (argc == 2)
+	{
+		rev_wstr(argv[1]);
+	}
+	write(1, "\n", 1);
 	return (0);
 }

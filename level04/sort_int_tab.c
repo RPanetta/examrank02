@@ -1,49 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fprime.c                                           :+:      :+:    :+:   */
+/*   sort_int_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 14:16:41 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/30 13:35:08 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/30 17:37:13 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/31 11:58:12 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-void	fprime(int argc, char **argv)
+void	sort_int_tab(int *tab, unsigned int size)
 {
-	int	n;
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
+	int				tmp;
 
-	i = 2;
-	if (argc == 2)
+	i = 0;
+	while (i < size - 1)
 	{
-		n = atoi(argv[1]);
-		if (n == 1)
-			printf("1");
-		while (i <= n)
+		j = 0;
+		while (j < size - 1 - i)
 		{
-			if (n % i == 0)
+			if (tab[j] > tab[j + 1])
 			{
-				printf("%d", i);
-				if (n != i)
-					printf("*");
-				n = n / i;
+				tmp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = tmp;
 			}
-			else
-			{
-				i++;
-			}
+			j++;
 		}
+		i++;
 	}
-	printf("\n");
 }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	fprime(argc, argv);
+	int	array[] = {2, 5, 4, 1, 6};
+	unsigned int	size;
+	unsigned int	i;
+
+	sort_int_tab(array, 5);
+	size = 5;
+	i = 0;
+	while (i < 5)
+	{
+		printf("%d ", array[i]);
+		i++;
+	}
+	printf("\n");
 	return (0);
 }

@@ -1,49 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fprime.c                                           :+:      :+:    :+:   */
+/*   sort_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 14:16:41 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/30 13:35:08 by rpanetta         ###   ########.fr       */
+/*   Created: 2025/12/31 12:11:24 by rpanetta          #+#    #+#             */
+/*   Updated: 2025/12/31 12:51:03 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "list.h"
 #include <stdlib.h>
 
-void	fprime(int argc, char **argv)
+t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 {
-	int	n;
-	int	i;
+	int		tmp;
+	t_list	*head;
 
-	i = 2;
-	if (argc == 2)
+	head = lst;
+	while (lst != NULL && lst->next != NULL)
 	{
-		n = atoi(argv[1]);
-		if (n == 1)
-			printf("1");
-		while (i <= n)
+		if ((*cmp)(lst->data, lst->next->data) == 0)
 		{
-			if (n % i == 0)
-			{
-				printf("%d", i);
-				if (n != i)
-					printf("*");
-				n = n / i;
-			}
-			else
-			{
-				i++;
-			}
+			tmp = lst->data;
+			lst->data = lst->next->data;
+			lst->next->data = tmp;
+			lst = head;
+		}
+		else
+		{
+			lst = lst->next;
 		}
 	}
-	printf("\n");
-}
-
-int	main(int argc, char **argv)
-{
-	fprime(argc, argv);
-	return (0);
+	return (head);
 }
