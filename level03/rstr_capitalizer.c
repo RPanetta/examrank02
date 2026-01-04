@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:02:33 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/18 14:27:35 by rpanetta         ###   ########.fr       */
+/*   Updated: 2026/01/04 18:45:02 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int	main(int argc, char **argv)
 		rstr_capitalizer(argv[i]);
 		write(1, "\n", 1);
 		i++;
+	}
+	if (argc == 1)
+	{
+		write(1, "\n", 1);
 	}
 	return (0);
 }
