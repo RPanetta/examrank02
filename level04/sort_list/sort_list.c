@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 12:11:24 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/31 12:51:03 by rpanetta         ###   ########.fr       */
+/*   Updated: 2026/01/05 12:19:48 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 	t_list	*head;
 
 	head = lst;
-	while (lst != NULL && lst->next != NULL)
+	while (lst && lst->next)
 	{
 		if ((*cmp)(lst->data, lst->next->data) == 0)
 		{
