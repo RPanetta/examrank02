@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:42:33 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/30 13:38:41 by rpanetta         ###   ########.fr       */
+/*   Updated: 2026/01/05 16:34:05 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char	**ft_split(char *str)
 		result[j] = ft_word_dup(&str[start], (i - start));
 		if (!result[j])
 		{
-			while (j >= 0)
+			while (j > 0)
 			{
 				free(result[j]);
 				j--;
