@@ -6,49 +6,44 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 15:15:17 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/10 15:40:07 by rpanetta         ###   ########.fr       */
+/*   Updated: 2026/01/07 17:59:24 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	last_word(int argc, char **argv)
+void	last_word(char *str)
 {
-	int	i;
-	int	end;
-	int	start;
+	int i;
+	int end;
 
-	if (argc == 2)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		i = 0;
-		while (argv[1][i])
-		{
-			i++;
-		}
-		while (i > 0 && (argv[1][i -1] == ' ' || argv[1][i - 1] == '\t'))
-		{
-			i--;
-		}
-		end = i;
-		while (i > 0 && (argv[1][i -1] != ' ' && argv[1][i - 1] != '\t'))
-		{
-			i--;
-		}
-		start = i;
-		while (start < end)
-		{
-			write(1, &argv[1][start], 1);
-			start++;
-		}
+		i++;
 	}
-	else
+	while (i > 0 && (str[i - 1] == ' ' || str[i - 1] == '\t'))
 	{
-		write(1, "\n", 1);
+		i--;
+	}
+	end = i;
+	while (i > 0 && (str[i - 1] != ' ' && str[i - 1] != '\t'))
+	{
+		i--;
+	}
+	while(i < end)
+	{
+		write(1, &str[i], 1);
+		i++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	last_word(argc, argv);
+	if (argc == 2)
+	{
+		last_word(argv[1]);
+	}
+	write(1, "\n", 1);
 	return (0);
 }
