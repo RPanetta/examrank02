@@ -6,30 +6,29 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:42:21 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/30 13:37:13 by rpanetta         ###   ########.fr       */
+/*   Updated: 2026/01/08 17:39:42 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "flood_fill.h"
-#include <stdio.h>
+typedef struct s_point
+{
+	int			x;
+	int			y;
+}			t_point;
 
 void	ft_replace(char **tab, int y, int x, char old, t_point size)
 {
-	char	new;
-
-	new = 'F';
-	if (y < 0 || x < 0 || y >= size.y || x >= size.x || tab[y][x] != old || tab[y][x] == new)
+	if (y < 0 || x < 0 || y >= size.y || x >= size.x || tab[y][x] != old)
 	{
 		return ;
 	}
-	else if (tab[y][x] == old)
-	{
-		tab[y][x] = new;
-		ft_replace(tab, y, (x + 1), old, size);
-		ft_replace(tab, y, (x - 1), old, size);
-		ft_replace(tab, (y + 1), x, old, size);
-		ft_replace(tab, (y - 1), x, old, size);
-	}
+	
+	tab[y][x] = 'F';
+	
+	ft_replace(tab, y, (x + 1), old, size);
+	ft_replace(tab, y, (x - 1), old, size);
+	ft_replace(tab, (y + 1), x, old, size);
+	ft_replace(tab, (y - 1), x, old, size);
 }
 
 void	flood_fill(char **tab, t_point size, t_point begin)
