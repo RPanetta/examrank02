@@ -6,7 +6,7 @@
 /*   By: rpanetta <rpanetta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 17:02:43 by rpanetta          #+#    #+#             */
-/*   Updated: 2025/12/30 17:36:06 by rpanetta         ###   ########.fr       */
+/*   Updated: 2026/01/08 16:34:36 by rpanetta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rostring(char *str)
 	int	i;
 	int	start;
 	int	end;
-	int	first;
+	int	next_word;
 
 	i = 0;
 	while (str[i] == ' ' || str[i] == '\t')
@@ -32,7 +32,7 @@ void	rostring(char *str)
 	{
 		i++;
 	}
-	first = 1;
+	next_word = 0;
 	while (str[i])
 	{
 		if (str[i] == ' ' || str[i] == '\t')
@@ -45,10 +45,11 @@ void	rostring(char *str)
 		else
 		{
 			write(1, &str[i], 1);
+			next_word = 1;
 			i++;
 		}
 	}
-	if (str[end])
+	if (next_word && start < end)
 	{
 		write(1, " ", 1);
 	}
@@ -61,7 +62,7 @@ void	rostring(char *str)
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
+	if (argc >= 2)
 	{
 		rostring(argv[1]);
 	}
